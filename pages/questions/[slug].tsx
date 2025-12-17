@@ -57,7 +57,7 @@ export default function QuestionPage() {
                                     </div>
 
 
-                                    <div className="mt-6 bg-black/95 from-purple-900/30 to-pink-900/30 rounded-xl p-5 border border-white/10">
+                                    <div className="mt-6 bg-black/95 from-purple-900/30 to-pink-900/30 rounded-3xl p-5 border border-white/10 shadow-[0_2px_30px_rgba(255,255,255,0.15)]">
                                         <h3 className="font-semibold text-white text-sm">Questions Of the Day</h3>
                                         <div className="flex justify-between items-center gap-2">
                                             <p className="text-white font-bold mt-2">{questionOfTheDay.title}</p>
@@ -77,7 +77,7 @@ export default function QuestionPage() {
                                         </p>
                                     </div>
 
-                                    <div className="mt-6 bg-black/95 from-purple-900/30 to-pink-900/30 rounded-xl p-5 border border-white/10">
+                                    <div className="mt-6 bg-black/95 from-purple-900/30 to-pink-900/30 rounded-3xl p-5 border border-white/10 shadow-[0_2px_30px_rgba(255,255,255,0.15)]">
                                         <h3 className="font-extrabold text-white text-2xl">Questions Community</h3>
                                         <p className="text-white font-bold mt-2">The questions community, chat, and discussion.</p>
                                         <button className="hidden mt-4 sm:block px-6 py-2 bg-[#4EDCD8] text-gray-900 rounded-full text-center w-fit h-12 font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(78,220,216,0.6)] animate-pulse">
@@ -92,13 +92,9 @@ export default function QuestionPage() {
                                 </div>
 
                                 {/* Sort Tabs */}
-                                <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4 justify-center">
+                                <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-4 justify-center -mt-5">
                                     <button
                                         onClick={() => setSortBy('best')}
-                                        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${sortBy === 'best'
-                                            ? 'bg-white/10 text-white'
-                                            : 'text-gray-500 hover:text-white'
-                                            }`}
                                     >
                                         <span className="inline-flex items-center bg-[#49D1CD] px-2 py-1 text-xs rounded-3xl font-medium text-black inset-ring inset-ring-gray-400/20 border-white/10 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(57,167,164,0.4)]">best</span>
                                     </button>
@@ -117,7 +113,7 @@ export default function QuestionPage() {
                                 </div>
 
                                 {/* Load More */}
-                                <button className="w-full mt-6 py-3 border border-white/10 rounded-xl text-gray-400 hover:text-white hover:border-white/20 transition-all">
+                                <button className="w-full mt-6 py-3 border border-white/10 rounded-3xl text-gray-400 hover:text-white hover:border-white/20 transition-all">
                                     Load more comments
                                 </button>
 
@@ -130,15 +126,13 @@ export default function QuestionPage() {
 
                             {/* Right Sidebar */}
                             <aside className="hidden lg:block w-150 shrink-0">
-                                <h2 className="text-xl font-semibold">Related Posts</h2>
-                                <div className="sticky top-20 space-y-6">
-                                    <section className="mt-8">
-                                        <div className="grid gap-4">
-                                            {relatedPosts.map((post) => (
-                                                <RelatedPostCard key={post.id} post={post} />
-                                            ))}
-                                        </div>
-                                    </section>
+                                <div className="sticky top-20">
+                                    <h2 className="text-xl font-semibold mb-4">Related Posts</h2>
+                                    <div className="overflow-y-auto max-h-[calc(100vh-120px)] space-y-4 scrollbar-hide">
+                                        {relatedPosts.map((post) => (
+                                            <RelatedPostCard key={post.id} post={post} />
+                                        ))}
+                                    </div>
                                 </div>
                             </aside>
                         </div>

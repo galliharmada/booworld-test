@@ -16,7 +16,7 @@ export const CommentCard = ({ comment }: CommentCardProps) => {
     };
 
     return (
-        <div className="p-4 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all">
+        <div className="p-4 border-white/10 shadow-[0_2px_30px_rgba(255,255,255,0.15)] rounded-3xl border hover:border-white/10 transition-all">
             <div className="flex gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 ring-2 ring-white/10">
                     <img

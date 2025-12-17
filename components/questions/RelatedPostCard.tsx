@@ -9,7 +9,9 @@ interface RelatedPostCardProps {
 export const RelatedPostCard = ({ post }: RelatedPostCardProps) => (
     <Link
         href={`/u/questions/${post.slug}`}
-        className="block p-4 bg-white/2 rounded-xl border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all group"
+        className="block p-4 bg-white/2 rounded-3xl border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all group
+         shadow-[0_2px_30px_rgba(255,255,255,0.15)]      
+        "
     >
         <span className="text-white font-semibold text-sm">Question of the Day</span>
         <div className="flex justify-between items-center">
