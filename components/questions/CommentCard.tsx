@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Comment } from '@/types/question';
-import { HeartIcon, ChatIcon, AwardIcon } from '@/components/icons';
+import { HeartIcon, ChatIcon, AwardIcon, ShareIcon, StarIcon } from '@/components/icons';
 
 interface CommentCardProps {
     comment: Comment;
@@ -31,14 +31,14 @@ export const CommentCard = ({ comment }: CommentCardProps) => {
                         <span className="text-gray-500 text-sm">{comment.timeAgo}</span>
                     </div>
                     <div className="flex items-center gap-2 mt-0.5 flex-wrap">
-                        <span className="px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs rounded-full font-medium">
+                        <span className="px-2 py-0.5 bg-[#4EDCD8] text-black text-xs rounded-full font-medium">
                             {comment.author.mbti}
                         </span>
-                        <span className="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded-full">
+                        <span className="px-2 py-0.5 text-white text-xs rounded-full font-medium" style={{ backgroundImage: 'url(/space.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                             {comment.author.zodiac}
                         </span>
                         {comment.author.age && (
-                            <span className="text-gray-500 text-xs">{comment.author.age}</span>
+                            <span className="text-white bg-[#4EDCD8] rounded-3xl px-2 py-0.5 text-xs font-medium">{comment.author.age}</span>
                         )}
                         {comment.author.awards && (
                             <div className="flex items-center gap-1">
@@ -67,7 +67,11 @@ export const CommentCard = ({ comment }: CommentCardProps) => {
                         <button className="flex items-center gap-1.5 text-gray-400 hover:text-blue-400 transition-colors">
                             <ChatIcon />
                             <span className="text-sm">{comment.replies}</span>
+                            <ShareIcon />
+                            <StarIcon />
                         </button>
+                    </div>
+                    <div className="flex justify-end -mt-6">
                         <button className="text-gray-400 hover:text-white text-sm transition-colors">
                             Reply
                         </button>

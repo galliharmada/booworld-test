@@ -67,7 +67,7 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
                         />
 
                         {searchOpen && (
-                            <div className="absolute top-full mt-0 left-0 right-0 bg-[#0a0a0a]/95 border border-white/10 rounded-[10px] shadow-2xl max-h-96 overflow-y-auto z-50">
+                            <div className="absolute top-full mt-0 left-0 right-0 bg-black/95 border border-white/10 rounded-[10px] shadow-2xl max-h-96 overflow-y-auto z-50">
                                 {filteredUniverses.length > 0 ? (
                                     <div className="py-2">
                                         {filteredUniverses.map((universe) => (
@@ -121,8 +121,8 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
                                 <Link href="/match" className="text-gray-300 hover:text-white py-2 transition-colors">Match</Link>
                                 <Link href="/database" className="text-gray-300 hover:text-white py-2 transition-colors">Personality Database</Link>
                                 <Link href="/tests" className="text-gray-300 hover:text-white py-2 transition-colors">Personality Tests</Link>
-                                <button className="mt-2 px-4 py-2 from-pink-500 to-purple-600 text-white rounded-full text-sm font-medium">
-                                    SIGN IN
+                                <button className="hidden sm:block px-6 py-2 bg-[#4EDCD8] text-gray-900 rounded-full text-center w-fit font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(78,220,216,0.6)] animate-pulse">
+                                    <p className="text-sm font-medium undefined text-black tracking-widest">SIGN IN</p>
                                 </button>
                             </nav>
                         </div>
@@ -193,8 +193,8 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
 
                     {/* Sidebar Footer */}
                     <div className="p-4 border-t border-white/10">
-                        <button className="w-full px-4 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
-                            SIGN IN
+                        <button className="hidden sm:block px-6 py-2 bg-[#4EDCD8] text-gray-900 rounded-full text-center w-fit font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(78,220,216,0.6)] animate-pulse">
+                            <p className="text-sm font-medium undefined text-black tracking-widest">SIGN IN</p>
                         </button>
                         <p className="text-center text-gray-500 text-xs mt-3">We stand for love.</p>
                     </div>

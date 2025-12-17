@@ -29,3 +29,12 @@ export interface Universe {
     souls: string;
     slug: string;
 }
+
+export interface QuestionOfTheDay {
+    id: string;
+    title: string;
+    date: string;
+    likes: number;
+    comments: number;
+    slug: string;
+}
