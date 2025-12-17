@@ -1,5 +1,4 @@
 import { ArrowLeftIcon, ChatIcon, HeartIcon, ShareIcon } from '@/components/icons';
-import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { CommentCard } from '@/components/questions/CommentCard';
@@ -139,7 +138,6 @@ export default function QuestionPage() {
                     </div>
                 </main >
 
-                <Footer />
             </div >
         </>
     );

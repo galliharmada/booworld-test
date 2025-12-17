@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { BurgerMenuIcon, CloseIcon, SearchIcon, HomeIcon, MatchIcon, MessageIcon, ProfileIcon, MenuIcon } from '@/components/icons';
+import { BurgerMenuIcon, CloseIcon, SearchIcon, HomeIcon, MatchIcon, MessageIcon, ProfileIcon, MenuIcon, PersonalityIcon, PersonalityTest, ResourcesIcon } from '@/components/icons';
 import { universes } from '@/data/mocks/universes';
 
 interface HeaderProps {
@@ -115,7 +115,7 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
                 {/* Mobile Menu */}
                 {
                     mobileMenuOpen && (
-                        <div className="md:hidden bg-[#0a0a0a] border-t border-white/5 py-4">
+                        <div className="md:hidden bg-black/95 border-t border-white/5 py-4">
                             <nav className="flex flex-col gap-2 px-4">
                                 <Link href="/" className="text-gray-300 hover:text-white py-2 transition-colors">Home</Link>
                                 <Link href="/match" className="text-gray-300 hover:text-white py-2 transition-colors">Match</Link>
@@ -132,7 +132,7 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
 
             {/* Sidebar Navigation */}
             <aside
-                className={`fixed top-0 left-0 h-full w-72 bg-[#0a0a0a]/98 backdrop-blur-md border-r border-white/10 z-[70] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`fixed top-0 left-0 h-full w-72 bg-black/95 backdrop-blur-md border-r border-white/10 z-[70] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 <div className="flex flex-col h-full">
@@ -187,16 +187,48 @@ export const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
                             >
                                 <ProfileIcon />
                                 <span className="font-medium">Profile</span>
+
+                            </Link>
+
+                            <Link
+                                href="/profile"
+                                onClick={handleCloseSidebar}
+                                className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all group"
+                            >
+                                <PersonalityIcon />
+                                <span className="font-medium">Personality Database</span>
+                            </Link>
+                            <Link
+                                href="/profile"
+                                onClick={handleCloseSidebar}
+                                className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all group"
+                            >
+                                <PersonalityTest />
+                                <span className="font-medium">Personality Tests</span>
+                            </Link>
+
+                            <Link
+                                href="/profile"
+                                onClick={handleCloseSidebar}
+                                className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all group"
+                            >
+                                <ResourcesIcon />
+                                <span className="font-medium">Resources</span>
+
                             </Link>
                         </div>
                     </nav>
 
                     {/* Sidebar Footer */}
                     <div className="p-4 border-t border-white/10">
-                        <button className="hidden sm:block px-6 py-2 bg-[#4EDCD8] text-gray-900 rounded-full text-center w-fit font-semibold hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(78,220,216,0.6)] animate-pulse">
-                            <p className="text-sm font-medium undefined text-black tracking-widest">SIGN IN</p>
-                        </button>
                         <p className="text-center text-gray-500 text-xs mt-3">We stand for love.</p>
+                        <div className="flex items-center justify-center gap-2 mt-3">
+                            <p className="text-center text-gray-500 text-xs mt-3">Terms</p>
+                            <p className="text-center text-gray-500 text-xs mt-3">Privacy</p>
+                            <p className="text-center text-gray-500 text-xs mt-3">FAQ</p>
+                            <p className="text-center text-gray-500 text-xs mt-3">Safety Tips</p>
+                        </div>
+                        <p className="text-center text-gray-500 text-xs mt-3">© 2025 BooWorld. All rights reserved.</p>
                     </div>
                 </div>
             </aside>

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { AwardIcon, HeartIcon, ProfileIcon, ShareIcon, StarIcon } from '@/components/icons';
 import { Comment } from '@/types/question';
-import { HeartIcon, ChatIcon, AwardIcon, ShareIcon, StarIcon } from '@/components/icons';
+import { useState } from 'react';
 
 interface CommentCardProps {
     comment: Comment;
@@ -65,7 +65,7 @@ export const CommentCard = ({ comment }: CommentCardProps) => {
                             <span className={`text-sm ${liked ? 'text-rose-500' : ''}`}>{likeCount}</span>
                         </button>
                         <button className="flex items-center gap-1.5 text-gray-400 hover:text-blue-400 transition-colors">
-                            <ChatIcon />
+                            <ProfileIcon />
                             <span className="text-sm">{comment.replies}</span>
                             <ShareIcon />
                             <StarIcon />
